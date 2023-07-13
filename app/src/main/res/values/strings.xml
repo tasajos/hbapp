@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">hb-SI
     </string>
+
+    <string-array name="tipos">
+        <item>Funciona</item>
+        <item>No Funciona</item>
+        <item>Necesita Reparacion</item>
+    </string-array>
+    <string name="seleccionar_tipo">Seleccionar tipo de producto</string>
+    <string-array name="tipos_producto">
+        <item>Funciona</item>
+        <item>No Funciona</item>
+        <item>Necesita Reparacion</item>
+        <!-- Agrega tantas categorías como sea necesario -->
+    </string-array>
 </resources>
