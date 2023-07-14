@@ -2,8 +2,6 @@ package org.chakuy.hbsis;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +16,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,8 +37,8 @@ public class insertar_registro extends AppCompatActivity {
 
         mfirestore = FirebaseFirestore.getInstance();
 
-
-
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  //      this.setTitle("Registro Ubicacion");
 
         // Asignacion de variables y recursos
         tipoSpinner = findViewById(R.id.estado);
@@ -71,6 +71,14 @@ public class insertar_registro extends AppCompatActivity {
                 }
             }
         });
+
+        // Obtener fecha actual en formato "día, mes, año"
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd, MMMM, yyyy");
+        String formattedDate = dateFormat.format(currentDate);
+
+        // Establecer fecha actual en el campo de texto
+        fecha.setText(formattedDate);
     }
 
     private void Posthb(String rnombre, String rarea, String restado, String rdescripcion, String rfecha) {

@@ -79,12 +79,6 @@
             android:layout_width="match_parent"
             android:layout_height="15dp" />
 
-        <Button
-            android:id="@+id/btn_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrar" />
-
         <ImageButton
             android:id="@+id/btn_imgregistrar"
             android:layout_width="176dp"
