@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.BuildConfig;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,7 +40,7 @@ public class login extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
 
         TextView txtversion = findViewById(R.id.txtversion);
-       // txtversion.setText("Version: " + BuildConfig.VERSION_NAME);
+        txtversion.setText("Version: " + BuildConfig.VERSION_NAME);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +70,7 @@ public class login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(login.this,MainActivity.class));
+                    startActivity(new Intent(login.this,men2.class));
                     Toast.makeText(login.this, "Bienvenido", Toast.LENGTH_SHORT).show();
 
                 }
@@ -88,7 +89,7 @@ public class login extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null){
-            startActivity(new Intent(login.this,MainActivity.class));
+            startActivity(new Intent(login.this,men2.class));
             finish();
         }
     }
